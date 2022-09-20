@@ -3,11 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Button, Grid, TextField} from "@mui/material";
+import {HashRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+
+
 root.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'));
+      <Routes><Route path={"/about"} component={About}/></Routes>
+      <App />
+    </HashRouter>
+
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField id="filled-basic" label="Filled" variant="filled" />
+      <TextField id="standard-basic" label="Standard" variant="standard" />
+
+
+
   </React.StrictMode>
 );
 
