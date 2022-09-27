@@ -4,6 +4,13 @@ import {useState} from "react";
 
 function App() {
     const [username, setUsername] = useState("Brian");
+    const About = ()=>{
+        return <div>
+            <h1>About</h1>
+        </div>
+    };
+
+
     return (
         <div className="App">
 

@@ -4,21 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Button, Grid, TextField} from "@mui/material";
-import {HashRouter} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
+
+//Step 2 i week 3
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-
+let About;
+let Item;
 
 
 
 root.render(
   <React.StrictMode>
     <HashRouter>
-      ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'));
       <Routes><Route path={"/about"} component={About}/></Routes>
       <App />
+      
     </HashRouter>
+
+
 
       <Button variant="text">Text</Button>
       <Button variant="contained">Contained</Button>
