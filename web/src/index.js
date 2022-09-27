@@ -35,11 +35,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <Routes><Route path={"/about"} component={About}/></Routes>
-      <App />
-      
-    </HashRouter>
+
+       <HashRouter> <App/> </HashRouter>
       <div>
         <Button variant="text">Text</Button>
         <Button variant="contained">Contained</Button>
@@ -76,7 +73,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
