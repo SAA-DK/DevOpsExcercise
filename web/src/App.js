@@ -3,7 +3,8 @@ import './App.css';
 import React, {useState} from "react";
 import {Route, Routes, useNavigate, useParams} from "react-router-dom";
 import {Button, Link} from "@mui/material";
-
+import {giraffeStore} from "./stores/GiraffeStore";
+import {observer} from "mobx-react-lite";
 
 
 function App() {
@@ -31,41 +32,16 @@ function App() {
                 <Route path={"/"} element={<h1>Startside</h1>}/>
            </Routes>
 
+            <ul>
+                {giraffeStore.giraffes.map((giraffeName, key)=>
+                <li key={key}>{giraffeName}</li>
+                    )}
+            </ul>
+
+            <button onClick={() => giraffeStore.addGiraffe("Elmer")}>Tilføj giraf</button>
+
         </div>
-
-
-
-      /*
-        const [username, setUsername] = useState("Brian");
-  return (
-      <div className="App">
-          <div>Hello, {username}</div>
-          <button onClick={(e)=>setUsername("Johnny")}>
-              Skift navn
-          </button>
-      </div>
-       */
-
-    /*  Dette er fra week to, chapter 2
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-      </header>
-    </div>
-     */
   );
 }
 
-export default App;
+export default observer(App);
